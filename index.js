@@ -84,7 +84,9 @@ class FetchAdapter {
 
     let data = store.convert(type, id, partial);
 
-    return this._fetch('PATCH', this._getUrl(store, type, id, options))
+    return this._fetch('PATCH', this._getUrl(store, type, id, options), {
+      data,
+    })
     .then(res => {
       store.add(data);
       return store.find(type, id);
