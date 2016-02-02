@@ -1,4 +1,4 @@
-<h2 align="center">fetch-adaptor</h2>
+<h2 align="center">fetch-adapter</h2>
 
 <p align="center">
 A <a href="https://fetch.spec.whatwg.org/" target="_blank">fetch</a> adapter for <a href="https://github.com/haydn/json-api-store" target="_blank">Json Api Store</a>
