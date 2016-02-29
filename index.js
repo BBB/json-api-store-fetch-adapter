@@ -6,15 +6,16 @@ class FetchAdapter {
 
   constructor(options) {
     this._base = (options && options.base) || '';
+    this._additionalHeaders =  (options && options.additionalHeaders) || {};
   }
 
   _fetch(method, url, body) {
     var statusCode;
     return fetch(url, {
-      headers: {
+      headers: Object.assign({}, this._additionalHeaders, {
         'Accept': 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json',
-      },
+      }),
       method,
       body: body ? JSON.stringify(body) : undefined,
     })
